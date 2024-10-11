@@ -1,0 +1,26 @@
+name: Go
+on: [push]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.16'
+
+      - name: Install dependencies
+        run: go get .
+
+      - name: Build
+        run: go build -o steam-2fa-generator.exe main.go
+
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v4.4.3
+        with:
+          name: Release
+          path: steam-2fa-generator.exe

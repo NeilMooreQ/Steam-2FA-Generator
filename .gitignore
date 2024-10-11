@@ -1,0 +1,16 @@
+/bin/
+/obj/
+vendor/
+*.sum
+.idea/
+*.iml
+*.swp
+*.swo
+vendor/
+.DS_Store
+Thumbs.db
+*.log
+*.exe
+*.exe~
+*.out
+*.app
